@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>German Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2 id="german-word">Laden...</h2>
+    <div id="choices" class="choices"></div>
+    <p id="score">Score: 0</p>
+    <button onclick="resetStats()">🔄 Reset Stats</button>
+    <button onclick="toggleStats()">📊 Show Stats</button>
+
+    <div id="stats" style="display: none; margin-top: 1rem;">
+        <h3>Word Stats</h3>
+        <div id="stats-table"></div>
+        <canvas id="chart" width="300" height="200"></canvas>
+    </div>
+
+    <p id="feedback"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
