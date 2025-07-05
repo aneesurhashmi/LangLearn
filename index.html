@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>German Flashcards</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LangLearn – German Flashcards</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="card">
-    <h2 id="german-word">Laden...</h2>
-    <div id="choices" class="choices"></div>
-    <p id="score">Score: 0</p>
-    <button onclick="resetStats()">🔄 Reset Stats</button>
-    <button onclick="toggleStats()">📊 Show Stats</button>
+  <div class="container">
+    <header>
+      <h1>🇩🇪 LangLearn</h1>
+      <p>Learn German vocabulary the smart way – one card at a time.</p>
+    </header>
 
-    <div id="stats" style="display: none; margin-top: 1rem;">
-        <h3>Word Stats</h3>
-        <div id="stats-table"></div>
-        <canvas id="chart" width="300" height="200"></canvas>
+    <div class="controls">
+      <label for="direction">Practice direction:</label>
+      <select id="direction">
+        <option value="de-en" selected>German → English</option>
+        <option value="en-de">English → German</option>
+      </select>
     </div>
 
-    <p id="feedback"></p>
+    <div class="card">
+      <h2 id="question">Laden...</h2>
+      <div id="options" class="choices"></div>
+      <p id="score">Score: 0</p>
+
+      <div class="buttons">
+        <button id="reset-btn">🔄 Reset</button>
+        <button id="toggle-stats-btn">📊 Show Stats</button>
+        <button id="export-btn">📤 Export Stats</button>
+      </div>
+
+      <p id="feedback"></p>
+    </div>
   </div>
+
+  <!-- <div id="stats-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-stats-btn">&times;</span>
+      <div id="stats">
+      </div>
+    </div>
+  </div> -->
+    <!-- Stats Modal -->
+  <div id="stats-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-stats-btn">&times;</span>
+      <div id="stats">
+        <!-- Stats content will be injected here -->
+      </div>
+    </div>
+  </div>
+
+
   <script src="script.js"></script>
 </body>
 </html>
